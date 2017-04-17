@@ -74,7 +74,8 @@ class GalleryPlugin(p.SingletonPlugin):
             'name': 'gallery',
             'title': 'Gallery',
             'schema': {
-                'image_field': [not_empty, in_list(self.list_datastore_fields), is_string_field(self.datastore_fields)],
+		#'image_field': [not_empty, in_list(self.list_datastore_fields), is_string_field(self.datastore_fields)],
+                'image_field': [not_empty, in_list(self.list_datastore_fields)],
                 'thumbnail_field': [not_empty, in_list(self.list_datastore_fields)],
                 'thumbnail_params': [],
                 'gallery_title_field': [ignore_empty, in_list(self.list_datastore_fields)],
