@@ -185,6 +185,10 @@ class GalleryPlugin(p.SingletonPlugin):
             item_count = data.get('total', 0)
             records = data['records']
 
+
+#POR AQUI REVISAR, CREO QUE SE ESTAN RECUPERANDO TODOS LOS DATOS, (tODOS LOS OTROS CAMPOS)
+#VERIFICAR PARA QUE ESOS DATOS TAMBIEN VAYAN AL FRONTEND
+
             for record in data['records']:
 
                 try:
@@ -244,7 +248,8 @@ class GalleryPlugin(p.SingletonPlugin):
 
         return {
             'images': image_list,
-            'datastore_fields':  self.datastore_fields,
+#            'datastore_fields':  self.datastore_fields,
+            'datastore_fields':  [{'value': f['id'], 'text': f['id']} for f in datastore_fields]
             'defaults': {},
             'resource_id': data_dict['resource']['id'],
             'package_name': data_dict['package']['name'],

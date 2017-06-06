@@ -15,7 +15,7 @@
 			{% set descripcion_string = "" %} 			
 			{% if datastore_fields %}			
 			   {% for field in datastore_fields %}
-			      {% set description_string = field %}			
+			      {% set description_string = field['value'] %}			
 			   {% endfor %}
 			   {% set description = description_string %}
 			{% else %}
