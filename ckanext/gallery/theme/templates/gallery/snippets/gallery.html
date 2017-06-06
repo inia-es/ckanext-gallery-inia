@@ -18,6 +18,11 @@
                     {% set description = image.description %}
                 {%  endif %}
 
+			{% for fields in datastore_fields %}
+				<p>fields</p>			
+			{% end for %}
+
+
                 <a href="{{ image.url }}" title="{{ image.modal_title if image.modal_title else '' }}" data-gallery="gallery" data-description="{{ description }}" class="gallery-thumbnail">
                     <img src="{{ image.thumbnail or image.url }}" alt="{{ image.gallery_title or image.modal_title }}" />
                 </a>
