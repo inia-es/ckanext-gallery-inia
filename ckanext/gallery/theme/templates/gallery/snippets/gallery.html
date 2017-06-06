@@ -17,7 +17,7 @@
 			   {% for key  in image['record'] %}
 			      {% set description_string = key['_id'] %}			
 			   {% endfor %}
-			   {% set description = "<p class='%s'> Dato {description_string}</p>" % description_string %}
+			   {% set description = "<p class='%s'> Dato {{ description_string }}</p>" % description_string %}
 			{% else %}
 			   {% set description = "<a href='%s'>No Image Data</a>" % url %}			
 			{% endif %}                  
@@ -36,12 +36,23 @@
                 {% if image.gallery_title %}
                     <p>{{ image.gallery_title }}</p>
                 {% endif %}
-		{% if image.record %}			
+		{% if image['record'] %}			
          	   {% for key  in image['record'] %}
-	              <p>{{ key['_id'] }} </p>	
-		      <p>{{ key['Image'] }} </p>			
+	        	{% if key['_id'] %}			
+         	             <p>{{ key['_id'] }} </p>	
+	                {% else %}
+			     <p>No data in key['_id']</p>
+			{% endif %}
+	        	{% if key %}			
+			      <p>{{ key }} </p>	
+	                {% else %}
+			      <p>No data in key </p>
+			{% endif %}
 		   {% endfor %}
+                {% else %}
+		      <p>No data in image['record']</p>
 		{% endif %}
+
 
             </div>
         {% endfor %}
