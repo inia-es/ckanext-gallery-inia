@@ -13,15 +13,14 @@
                         {% set url = h.url_for(controller='ckanext.nhm.controllers.record:RecordController', action='view', package_name=package_name, resource_id=resource_id, record_id=image['record_id']) %}
                         {#% set description = "<a href='%s'>View</a>" % url %#}
 			{% set descripcion_string = "" %} 			
-			{% if datastore_fields %}			
-			   {% for field in datastore_fields %}
-			      {% set description_string = field['value'] %}			
+			{% if image.record %}			
+			   {% for key, value  in image.record %}
+			      {% set description_string = key %}			
 			   {% endfor %}
 			   {% set description = description_string %}
 			{% else %}
 			   {% set description = "<a href='%s'>No Image Data</a>" % url %}			
-			{% endif %}                   
-			
+			{% endif %}                  
 		    {% endif %}
 
                 {% else %}

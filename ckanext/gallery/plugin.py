@@ -227,7 +227,8 @@ class GalleryPlugin(p.SingletonPlugin):
                                 'thumbnail': thumbnail,
                                 'gallery_title': gallery_title,
                                 'modal_title': modal_title,
-                                'record_id': record['_id']
+                                'record_id': record['_id'],
+				'record': record
                             })
 
         page_params = {
@@ -248,8 +249,7 @@ class GalleryPlugin(p.SingletonPlugin):
 
         return {
             'images': image_list,
-#            'datastore_fields':  self.datastore_fields,
-            'datastore_fields':  [{'value': f['id'], 'text': f['id']} for f in self.datastore_fields],
+            'datastore_fields':  self.datastore_fields,
             'defaults': {},
             'resource_id': data_dict['resource']['id'],
             'package_name': data_dict['package']['name'],
