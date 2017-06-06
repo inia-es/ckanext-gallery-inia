@@ -14,10 +14,10 @@
                         {#% set description = "<a href='%s'>View</a>" % url %#}
 			{% set descripcion_string = "" %} 			
 			{% if image.record %}			
-			   {% for key, value  in image.record %}
-			      {% set description_string = key %}			
+			   {% for key  in image.record %}
+			      {% set description_string = key['_id'] %}			
 			   {% endfor %}
-			   {% set description = description_string %}
+			   {% set description = <p class='%s'> Dato </p> % description_string %}
 			{% else %}
 			   {% set description = "<a href='%s'>No Image Data</a>" % url %}			
 			{% endif %}                  
