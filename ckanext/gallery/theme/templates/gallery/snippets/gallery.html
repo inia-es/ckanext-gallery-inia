@@ -14,7 +14,7 @@
                         {#% set description = "<a href='%s'>View</a>" % url %#}
 			{% set descripcion_string = "" %} 			
 				{% for fields in datastore_fields %}
-					{% description_string = description_string + " <p>fields</p>" %}			
+					{% set description_string = description_string + " <p>fields</p>" %}			
 				{% endfor %}
 			{% set description = description_string %}
                     {% endif %}
