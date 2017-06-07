@@ -45,7 +45,8 @@
    			{% for record in image['record'] %}			
          	  		<p> Imprimiendo el valor de cada campo  </p>
 				<p>{{ record }} </p> 
-				<p> {{ image['record']['{{ record }}'] }} </p>
+				{% set values = image['record'][{{ record }}] %}
+				<p> {{ values }} </p>
 			{% endfor %}
 		{% else %}
  		  <p>No data in image['record']</p>
