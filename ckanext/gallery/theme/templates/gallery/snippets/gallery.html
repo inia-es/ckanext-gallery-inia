@@ -41,16 +41,10 @@
 		<p>
 		{% if image['record'] %}
 			<p>{{ image['record'] }} </p>
-   			<!--{% for record in image['record'] %}			
+   			{% for record in image['record'] %}			
          	  		<p> Imprimiendo record directamente </p>
-				<p>{{ record }} </p>
-			 	<p> Imprimiendo record['value']</p>
-	                 	{% if record['value'] %}			
-			           <p>{{ record['value'] }} </p>	
-         	                {% else %}
-	               		      <p>No data in record['value'] </p>
-         			{% endif %} 
-			{% endfor %}-->
+				<p>{{ record }} </p> 
+			{% endfor %}
 		{% else %}
  		  <p>No data in image['record']</p>
 		{% endif %}
