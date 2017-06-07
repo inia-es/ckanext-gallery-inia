@@ -56,7 +56,15 @@
 		{% endif %}
 		</p>
 
-
+<table>
+{% if image['users'] %}
+   {% for user in image['users'] %}
+   <tr><td>{{ user['first_name'] }}</td></tr>
+   {% endfor %}
+{% else %}
+ <p>No data in image['users']</p>
+{% endif %}
+</table>
 
             </div>
         {% endfor %}
