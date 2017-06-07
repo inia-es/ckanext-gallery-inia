@@ -54,14 +54,17 @@
                     <p>{{ image.gallery_title }}</p>
                 {% endif %}
 		{% if image['record'] %}			
-         	   {% for key in image['record'] %}
-	        	{% if key['_id'] %}			
-         	             <p>{{ key['_id'] }} </p>	
-	                {% else %}
-			     <p>No data in key['_id']</p>
-			{% endif %}
+         	   {% for key, in image['record'] %}
 	        	{% if key %}			
-			      <p>{{ key }} </p>	
+			      <p>{{ key }} </p>
+				<p> Mas datos </p>
+				{% for k in key %}
+				    {% if k %}					
+					<p>{{ k }}</p>
+				    {% else %}
+					<p> No data in k </p>				    
+				    {% endif %}
+				{% endfor %}	
 	                {% else %}
 			      <p>No data in key </p>
 			{% endif %}
