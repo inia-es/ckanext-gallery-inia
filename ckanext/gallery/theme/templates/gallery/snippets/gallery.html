@@ -39,29 +39,18 @@
                 {% endif %}
 		
 		<p>
+		
+<div>
+<p>
+		{% set cellwidth = 100/total_items %}
 		{% if image['record'] %}
-			<!--<p>{{ image['record'] }} </p> -->
-			<p> {{ image['record']['_id'] }} </p> 
-   			{% for record in image['record'] %}			
-         	  		<p> Imprimiendo el valor de cada campo  </p>
-				<p>{{ record }} </p> 
-				{% set values = image['record'][record] %}
-				<p> {{ values }} </p>
-			{% endfor %}
-		{% else %}
- 		  <p>No data in image['record']</p>
-		{% endif %}
-		</p>
-
-
-		{% if image['record'] %}
-			<table>
-			<tr> <!--printing headers-->
+			<table WIDTH="50%" style="border-collapse: collapse; border: black 1px solid;">
+			<tr WIDTH='10%'> <!--printing headers-->
 				{% for field in image['record'] %}			
 		         		<td> {{ field }} </td> 
 				{% endfor %}
 			</tr>
-			<tr>
+			<tr WIDTH='10%'>
 				{% for field in image['record'] %}			 
 					{% set value = image['record'][field] %}
 					<td> {{ value }} </td>
@@ -71,10 +60,11 @@
 		{% else %}
 	 		  <p> No values in image['record'] </p>
 		{% endif %}
-
-
+</p>
+</div>
             </div>
         {% endfor %}
+
     </div>
   </div>
 
