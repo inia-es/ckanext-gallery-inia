@@ -229,10 +229,10 @@ class GalleryPlugin(p.SingletonPlugin):
                                 'modal_title': modal_title,
                                 'record_id': record['_id'],
 #				'record': json.dumps(record),
-				'record': record,
+				'record': [{'value': r[0], 'text': r[1]} for r in record],
                             })
 
-        page_params = {
+        page_params = {-
             'collection':records,
             'page': current_page,
             'url': self.pager_url,
