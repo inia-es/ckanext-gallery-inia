@@ -3,9 +3,9 @@
  <div class="row">
 <table WIDTH="100%" style="border-collapse: collapse; border: black 1px solid;">
 		{% if images[0]['record'] %} 		
-			<tr WIDTH='10%'> <!--printing headers-->
+			<tr WIDTH='10%' style="background-color: rgb(213, 223, 211);"> <!--printing headers-->
 				{% for field in images[0]['record'] %}			
-		         		<td> <h2> {{ field }} </h2></td> 
+		         		<td> <b> {{ field }} </b></td> 
 				{% endfor %}
 			</tr>
 		{% else %}
