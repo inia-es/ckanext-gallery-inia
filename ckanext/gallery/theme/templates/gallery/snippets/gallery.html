@@ -54,8 +54,8 @@
                     <p>{{ image.gallery_title }}</p>
                 {% endif %}
 		<p>
-		{% if page.collections %}
-   			{% for record in page.collections %}			
+		{% if page['collections'] %}
+   			{% for record in page['collections'] %}			
          	  
 	                 	{% if record['_id'] %}			
 			           <p>{{ record['_id'] }} </p>	
@@ -64,7 +64,7 @@
          			{% endif %}
 			{% endfor %}
 		{% else %}
- 		  <p>No data in page.collections</p>
+ 		  <p>No data in page['collections']</p>
 		{% endif %}
 		/p>
 
