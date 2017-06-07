@@ -221,7 +221,7 @@ class GalleryPlugin(p.SingletonPlugin):
                                 if thumbnail_params:
                                     q = '&' if '?' in thumbnail else '?'
                                     thumbnail += q + thumbnail_params
-
+				
                             image_list.append({
                                 'url': image,
                                 'thumbnail': thumbnail,
@@ -253,7 +253,8 @@ class GalleryPlugin(p.SingletonPlugin):
             'defaults': {},
             'resource_id': data_dict['resource']['id'],
             'package_name': data_dict['package']['name'],
-            'page': page
+            'page': page,
+    
         }
 
     def _get_datastore_fields(self, resource_id):

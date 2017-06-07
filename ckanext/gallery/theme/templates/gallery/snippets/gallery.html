@@ -1,19 +1,19 @@
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
    
 <p>
-{% if datastore_fields %}
-   {% for field in datastore_fields %}			
+{% if page %}
+   {% for record in page['collections'] %}			
          	  
-	        	{% if field %}			
-			      <p>{{ field }} </p>	
+	        	{% if record['_id'] %}			
+			      <p>{{ record['_id'] }} </p>	
 	                {% else %}
-			      <p>No data in field </p>
+			      <p>No data in record['_id'] </p>
 			{% endif %}
 		
               
    {% endfor %}
 {% else %}
-   <p>No data in datastore_fields</p>
+   <p>No data in page</p>
 {% endif %}
 </p>
  <div class="row">
@@ -53,25 +53,20 @@
                 {% if image.gallery_title %}
                     <p>{{ image.gallery_title }}</p>
                 {% endif %}
-		{% if image['record'] %}			
-         	   {% for key in image['record'] %}
-	        	{% if key %}			
-			      <p>{{ key }} </p>
-				<p> Mas datos </p>
-				{% for k in key %}
-				    {% if k %}					
-					<p>{{ k }}</p>
-				    {% else %}
-					<p> No data in k </p>				    
-				    {% endif %}
-				{% endfor %}	
-	                {% else %}
-			      <p>No data in key </p>
-			{% endif %}		
-		   {% endfor %}
-                {% else %}
-		      <p>No data in image['record']</p>
+		<p>
+		{% if page.collections %}
+   			{% for record in page.collections %}			
+         	  
+	                 	{% if record['_id'] %}			
+			           <p>{{ record['_id'] }} </p>	
+         	                {% else %}
+	               		      <p>No data in record['_id'] </p>
+         			{% endif %}
+			{% endfor %}
+		{% else %}
+ 		  <p>No data in page.collections</p>
 		{% endif %}
+		/p>
 
 
             </div>
