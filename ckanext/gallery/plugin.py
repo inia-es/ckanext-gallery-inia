@@ -242,10 +242,6 @@ class GalleryPlugin(p.SingletonPlugin):
 #				'record': [{'value': r[0], 'text': r[1]} for r in record],
                             })
 
-
-
-users = json.loads(json_str)
-
         page_params = {
             'collection':records,
             'page': current_page,
