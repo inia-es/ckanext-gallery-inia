@@ -53,15 +53,25 @@
 		{% endif %}
 		</p>
 
-<table>
-{% if image['users'] %}
-   {% for user in image['users'] %}
-   <tr><td>{{ user['first_name'] }}</td></tr>
-   {% endfor %}
-{% else %}
- <p>No data in image['users']</p>
-{% endif %}
-</table>
+
+		{% if image['record'] %}
+			<table>
+			<tr> <!--printing headers-->
+				{% for field in image['record'] %}			
+		         		<td> {{ field }} </td> 
+				{% endfor %}
+			</tr>
+			<tr>
+				{% for field in image['record'] %}			 
+					{% set value = image['record'][field] %}
+					<td> {{ value }} </td>
+				{% endfor %}
+			</tr> <!--printing row-->
+			</table>
+		{% else %}
+	 		  <p> No values in image['record'] </p>
+		{% endif %}
+
 
             </div>
         {% endfor %}

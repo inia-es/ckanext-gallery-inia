@@ -222,14 +222,6 @@ class GalleryPlugin(p.SingletonPlugin):
                                     q = '&' if '?' in thumbnail else '?'
                                     thumbnail += q + thumbnail_params
 				
-			    json_str = '''[{"first_name": "John", "last_name": "Smith", "user_id": 4, 
-					"address": null}, {"first_name": "Jane", "last_name": "Heart",
-					    "user_id": 5, "address": null}, {"first_name": "Dom",
-					    "last_name": "Robinsons", "user_id": 6, "address": null},
-					    {"first_name": "Pete", "last_name": "Hand", "user_id": 7,
-					    "address": null}]'''
-
-			    users = json.loads(json_str)
 				#json.dumps(record)
                             image_list.append({
                                 'url': image,
@@ -238,7 +230,6 @@ class GalleryPlugin(p.SingletonPlugin):
                                 'modal_title': modal_title,
                                 'record_id': record['_id'],
 				'record': record,
-				'users': users,
 #				'record': [{'value': r[0], 'text': r[1]} for r in record],
                             })
 
