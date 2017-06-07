@@ -256,6 +256,7 @@ class GalleryPlugin(p.SingletonPlugin):
             'resource_id': data_dict['resource']['id'],
             'package_name': data_dict['package']['name'],
             'page': page,
+	    'total_items': item_count,
     
         }
 
