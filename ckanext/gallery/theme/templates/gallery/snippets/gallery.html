@@ -1,7 +1,18 @@
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
    
  <div class="row">
-        {% for image in images %}
+<table WIDTH="50%" style="border-collapse: collapse; border: black 1px solid;">
+		{% if images[0]['record'] %} 		
+			<tr WIDTH='10%'> <!--printing headers-->
+				{% for field in images[0]['record'] %}			
+		         		<td> {{ field }} </td> 
+				{% endfor %}
+			</tr>
+		{% else %}
+			<p> No data in images[0]['record'] </p> 
+		{% endif %} 
+     
+ {% for image in images %}
 
             <div class="gallery-image col2 span2">
 
@@ -12,58 +23,37 @@
                     for the main gallery view, but this snippet can be used elsewhere #}
                     {% if package_name and resource_id %}
                         {% set url = h.url_for(controller='ckanext.nhm.controllers.record:RecordController', action='view', package_name=package_name, resource_id=resource_id, record_id=image['record_id']) %}
-                        {#% set description = "<a href='%s'>View</a>" % url %#}
-			{% set descripcion_string = "" %} 			
-			{% if image.record %}			
-			   {% for key  in image['record'] %}
-			      {% set description_string = key['_id'] %}			
-			   {% endfor %}
-			   {% set description = "<p class='%s'> Dato {{ description_string }}</p>" % description_string %}
-			{% else %}
-			   {% set description = "<a href='%s'>No Image Data</a>" % url %}			
-			{% endif %}                  
+                        {#% set description = "<a href='%s'>View</a>" % url %#}               
 		    {% endif %}
-
                 {% else %}
                     {% set description = image.description %}
                 {%  endif %}
 
 			
 
-
+<!--
                 <a href="{{ image.url }}" title="{{ image.modal_title if image.modal_title else '' }}" data-gallery="gallery" data-description="{{ description }}" class="gallery-thumbnail">
                     <img src="{{ image.thumbnail or image.url }}" alt="{{ image.gallery_title or image.modal_title }}" />
                 </a>
                 {% if image.gallery_title %}
                     <p>{{ image.gallery_title }}</p>
                 {% endif %}
+		-->
+	
 		
-		<p>
-		
-<div>
-<p>
-		
-		{% if image['record'] %}
-			<table WIDTH="50%" style="border-collapse: collapse; border: black 1px solid;">
-			<tr WIDTH='10%'> <!--printing headers-->
-				{% for field in image['record'] %}			
-		         		<td> {{ field }} </td> 
-				{% endfor %}
-			</tr>
+			
 			<tr WIDTH='10%'>
 				{% for field in image['record'] %}			 
 					{% set value = image['record'][field] %}
 					<td> {{ value }} </td>
 				{% endfor %}
-			</tr> <!--printing row-->
-			</table>
-		{% else %}
-	 		  <p> No values in image['record'] </p>
-		{% endif %}
-</p>
-</div>
+			</tr>
+		
             </div>
         {% endfor %}
+
+</table>
+
 
     </div>
   </div>
