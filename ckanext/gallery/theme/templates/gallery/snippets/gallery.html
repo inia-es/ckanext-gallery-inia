@@ -1,7 +1,7 @@
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
    
  <div class="row">
-<table WIDTH="50%" style="border-collapse: collapse; border: black 1px solid;">
+<table WIDTH="100%" style="border-collapse: collapse; border: black 1px solid;">
 		{% if images[0]['record'] %} 		
 			<tr WIDTH='10%'> <!--printing headers-->
 				{% for field in images[0]['record'] %}			
@@ -45,7 +45,15 @@
 			<tr WIDTH='10%'>
 				{% for field in image['record'] %}			 
 					{% set value = image['record'][field] %}
-					<td> {{ value }} </td>
+					{% if (('http' in value ) and ( ('.jpg' in value) or ('.JPG' in value) or ('.png' in value)
+								('.PNG' in value))) :
+	
+                    				<img src="{{ image.thumbnail or image.url }}" alt="{{ image.gallery_title or image.modal_title }}"  width="80" height="80"/>
+       					
+					 %}
+					{% else %}
+						<td> {{ value }} </td>
+					{% endif %}
 				{% endfor %}
 			</tr>
 		
