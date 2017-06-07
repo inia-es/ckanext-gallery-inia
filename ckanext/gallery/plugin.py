@@ -228,7 +228,8 @@ class GalleryPlugin(p.SingletonPlugin):
                                 'gallery_title': gallery_title,
                                 'modal_title': modal_title,
                                 'record_id': record['_id'],
-				'record': json.dumps(record),
+#				'record': json.dumps(record),
+				'record': record,
                             })
 
         page_params = {
