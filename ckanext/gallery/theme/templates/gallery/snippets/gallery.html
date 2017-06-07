@@ -47,9 +47,9 @@
 					{% set value = image['record'][field] %}
 					{% if (('http' in value ) and ( ('.jpg' in value) or ('.JPG' in value) or ('.png' in value)
 								('.PNG' in value))) :
-	
-                    				<img src="{{ image.thumbnail or image.url }}" alt="{{ image.gallery_title or image.modal_title }}"  width="80" height="80"/>
-       					
+	<a href="{{ image.url }}">
+                   <img src="{{ image.thumbnail or image.url }}" alt="{{ image.gallery_title or image.modal_title }}"  width="80" height="80"></img>
+       				</a>	
 					 %}
 					{% else %}
 						<td> {{ value }} </td>
