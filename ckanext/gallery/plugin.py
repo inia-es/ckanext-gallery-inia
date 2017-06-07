@@ -230,14 +230,14 @@ class GalleryPlugin(p.SingletonPlugin):
 					    "address": null}]'''
 
 			    users = json.loads(json_str)
-
+				#json.dumps(record)
                             image_list.append({
                                 'url': image,
                                 'thumbnail': thumbnail,
                                 'gallery_title': gallery_title,
                                 'modal_title': modal_title,
                                 'record_id': record['_id'],
-				'record': json.dumps(record),
+				'record': record,
 				'users': users,
 #				'record': [{'value': r[0], 'text': r[1]} for r in record],
                             })
