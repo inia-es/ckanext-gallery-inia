@@ -232,7 +232,7 @@ class GalleryPlugin(p.SingletonPlugin):
 				'record': [{'value': r[0], 'text': r[1]} for r in record],
                             })
 
-        page_params = {-
+        page_params = {
             'collection':records,
             'page': current_page,
             'url': self.pager_url,
