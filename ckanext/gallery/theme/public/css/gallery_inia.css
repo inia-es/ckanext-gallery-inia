@@ -1,23 +1,21 @@
-*{
-  box-sizing: border-box;
-}
 
 #searchInDataTableInput {
-  background-image: url('/css/searchicon.png');
+  background-image: url('/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
+  width: 30%;
+  font-size: 14x;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+  float: left;
 }
 
 #dataTable {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #ddd;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 #dataTable th, #dataTable td {
