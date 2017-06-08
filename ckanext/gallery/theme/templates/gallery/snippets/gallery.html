@@ -98,18 +98,32 @@ function searchFunction() {
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) { 
     td = tr[i].getElementsByTagName("td");
-    string = " if ( "
     for (j = 0; j < td.length; j++) { 
-      if (td[j]) {
-	string = string + "( td["+j+"].innerHTML.toUpperCase().indexOf(filter) > -1 ) "   
-      }
-      if (i<(tr.length-1)){
-	string = string + " || "
-      }
-    }  
-    string = string + " ) { tr[i].style.display = "";  } else {       tr[i].style.display = 'none';     }"
-    eval(string);
-   // if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+       if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+       } else {
+          tr[i].style.display = "none";
+       }
+   }
+
+
+
+
+//    string = " if ( "
+ //   for (j = 0; j < td.length; j++) { 
+  //    if (td[j]) {
+//	string = string + "( td["+j+"].innerHTML.toUpperCase().indexOf(filter) > -1 ) "   
+ //     }
+  //    if (i<(tr.length-1)){
+//	string = string + " || "
+ //     }
+  //  }  
+   // string = string + " ) { tr[i].style.display = "";  } else {       tr[i].style.display = 'none';     }"
+    //eval(string);
+   
+
+
+// if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
    //    tr[i].style.display = "";
    // } else {
    //    tr[i].style.display = "none";
