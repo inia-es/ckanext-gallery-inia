@@ -1,11 +1,75 @@
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
    
+
+<h2>My Customers</h2>
+
+<input type="text" id="searchInDataTableInput" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
+<!--
+<table id="dataTable###">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+    <td>France</td>
+  </tr>
+</table>
+-->
+<script>
+function searchFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchInDataTableInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
  <div class="row">
-<table WIDTH="100%" style="border-collapse: collapse; border: black 1px solid;">
+<table id="dataTable" WIDTH="100%">
 		{% if images[0]['record'] %} 		
-			<tr WIDTH='10%' style="background-color: rgb(213, 223, 211);"> <!--printing headers-->
+			<tr class="header" WIDTH='10%'"> <!--printing headers-->
 				{% for field in images[0]['record'] %}			
-		         		<td> <b> {{ field }} </b></td> 
+		         		<th> <b> {{ field }} </b></th> 
 				{% endfor %}
 			</tr>
 		{% else %}
@@ -61,6 +125,26 @@
 
 </table>
 
+
+<script>
+function searchFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchInDataTableInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[9];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 
     </div>
   </div>
