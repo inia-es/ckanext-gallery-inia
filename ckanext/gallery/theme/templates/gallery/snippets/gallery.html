@@ -91,20 +91,25 @@ function searchFunction() {
 
 <script>
 function searchFunction() {
-  var input, filter, table, tr, td, i, string;
+  var input, filter, table, tr, td, i, string, find;
   input = document.getElementById("searchInDataTableInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("dataTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) { 
     td = tr[i].getElementsByTagName("td");
+    find = false;
     for (j = 0; j < td.length; j++) { 
        if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+		find = true;      
+        }
+    }
+
+       if (find==true) { 
           tr[i].style.display = "";
        } else {
           tr[i].style.display = "none";
        }
-   }
 
 
 
