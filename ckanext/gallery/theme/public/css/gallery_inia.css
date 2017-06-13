@@ -7,7 +7,7 @@
   font-size: 14x;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   float: left;
 }
 
@@ -15,12 +15,12 @@
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #dataTable th, #dataTable td {
   text-align: left;
-  padding: 12px;
+  padding: 10px;
 }
 
 #dataTable tr {
