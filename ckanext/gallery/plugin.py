@@ -50,6 +50,7 @@ def is_string_field(datastore_fields):
     return validate
 
 
+
 class GalleryPlugin(p.SingletonPlugin):
     """
     Gallery plugin
