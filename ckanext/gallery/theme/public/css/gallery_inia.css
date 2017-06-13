@@ -16,11 +16,15 @@
   width: 100%;
   border: 1px solid #ddd;
   font-size: 12px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
 }
 
 #dataTable th, #dataTable td {
   text-align: left;
   padding: 1px;
+  border: 1px solid #ddd;
 }
 
 #dataTable tr {
