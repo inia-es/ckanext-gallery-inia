@@ -66,7 +66,7 @@ class GalleryPlugin(p.SingletonPlugin):
         """Add our template directories to the list of available templates"""
         p.toolkit.add_template_directory(config, 'theme/templates')
         p.toolkit.add_public_directory(config, 'theme/public')
-        p.toolkit.add_resource('theme/public', 'ckanext-gallery-inia')
+        p.toolkit.add_resource('theme/public', 'ckanext-gallery')
 
     ## IResourceView
     def info(self):
