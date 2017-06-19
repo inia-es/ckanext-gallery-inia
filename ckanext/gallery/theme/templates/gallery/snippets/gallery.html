@@ -10,7 +10,7 @@
                     {# Check we have package_name and resource_id - these are set up in template variables
                     for the main gallery view, but this snippet can be used elsewhere #}
                     {% if package_name and resource_id %}
-                        {% set url = h.url_for(controller='ckanext.nhm.controllers.record:RecordController', action='view', package_name=package_name, resource_id=resource_id, record_id=image['record_id']) %}
+			{% set url = h.url_for(controller='ckanext.recordviewer.controller:RVController', action='record_read', id=package_name, resource_id=resource_id, record_id=image['record_id']) %}
                         {% set description = "<a href='%s'>View record</a>" % url %}
                     {% endif %}
 
