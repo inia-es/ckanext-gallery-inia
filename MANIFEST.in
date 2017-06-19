@@ -1,4 +1,5 @@
+
 recursive-include    ckanext/gallery/theme/templates                            *
 recursive-include    ckanext/gallery/theme/public                               *
-recursive-include    ckanext/gallery *.html *.json *.js *.less *.css
+recursive-include    ckanext/gallery/theme/templates/gallery/snippets           *
 

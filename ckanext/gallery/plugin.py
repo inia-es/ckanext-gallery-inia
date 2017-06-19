@@ -50,7 +50,6 @@ def is_string_field(datastore_fields):
     return validate
 
 
-
 class GalleryPlugin(p.SingletonPlugin):
     """
     Gallery plugin
@@ -186,10 +185,6 @@ class GalleryPlugin(p.SingletonPlugin):
             item_count = data.get('total', 0)
             records = data['records']
 
-
-#POR AQUI REVISAR, CREO QUE SE ESTAN RECUPERANDO TODOS LOS DATOS, (tODOS LOS OTROS CAMPOS)
-#VERIFICAR PARA QUE ESOS DATOS TAMBIEN VAYAN AL FRONTEND
-
             for record in data['records']:
 
                 try:
@@ -222,16 +217,13 @@ class GalleryPlugin(p.SingletonPlugin):
                                 if thumbnail_params:
                                     q = '&' if '?' in thumbnail else '?'
                                     thumbnail += q + thumbnail_params
-				
-				#json.dumps(record)
+
                             image_list.append({
                                 'url': image,
                                 'thumbnail': thumbnail,
                                 'gallery_title': gallery_title,
                                 'modal_title': modal_title,
-                                'record_id': record['_id'],
-				'record': record,
-#				'record': [{'value': r[0], 'text': r[1]} for r in record],
+                                'record_id': record['_id']
                             })
 
         page_params = {
@@ -256,9 +248,7 @@ class GalleryPlugin(p.SingletonPlugin):
             'defaults': {},
             'resource_id': data_dict['resource']['id'],
             'package_name': data_dict['package']['name'],
-            'page': page,
-	    'total_items': item_count,
-    
+            'page': page
         }
 
     def _get_datastore_fields(self, resource_id):
